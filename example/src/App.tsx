@@ -38,11 +38,6 @@ export default function App() {
   };
 
   React.useEffect(() => {
-    // Logger.setup(defaultConfig);
-    // const log = Logger.getInstance().logger;
-    // const generalLog = log.extend('general');
-    // log.enable('general');
-    // generalLog.error('error');
     getContent();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
