@@ -136,12 +136,11 @@ class Logger {
 
   public makeZipAndEncrypt = async (): Promise<string> => {
     await zip(this.logDirectoryPath, this.zipPath);
-    const filePath = await OpenPGP.encryptFile(
+    return OpenPGP.encryptFile(
       this.zipPath,
       this.encryptedFilePath,
       this.publicKey
     );
-    return filePath;
   };
 }
 
