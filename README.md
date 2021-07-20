@@ -44,7 +44,7 @@ const filePath = await Logger.getInstance().makeZipAndEncrypt();
 ```
 The logs will be printed like below.
 
-![alt text](https://ibb.co/hW4v8Yv)
+![alt text](https://i.ibb.co/gTfCg4C/Screenshot-2021-07-20-at-10-08-50.png)
 
 ## Contributing
 
