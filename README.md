@@ -42,6 +42,9 @@ const filePath = await Logger.getInstance().makeZipAndEncrypt();
 
 // You can email/ share this file. Afterwards, you will need at tool to decrypt the file such as https://pgptool.github.io/ (For testing purposes, use they key given)
 ```
+The logs will be printed like below.
+
+![alt text](https://ibb.co/hW4v8Yv)
 
 ## Contributing
 
