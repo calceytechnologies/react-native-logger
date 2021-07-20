@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import {
   StyleSheet,
-  View,
   Text,
   TouchableOpacity,
   Alert,
@@ -22,17 +21,17 @@ export default function App() {
     deleteLogsAfterDays: 30,
   };
 
-  const getCt = async () => {
+  const getContent = async () => {
     try {
       Logger.setup(defaultConfig);
       const log = Logger.getInstance().logger;
       const generalLog = log.extend('general');
       log.enable('general');
       generalLog.error('test text');
-      const content = await RNFS.readDir(
+      const dirs = await RNFS.readDir(
         `${Logger.getInstance().documentDirectoryPath}/logs`
       );
-      setFolderContent(content);
+      setFolderContent(dirs);
     } catch (e) {
       console.log(e);
     }
@@ -44,11 +43,11 @@ export default function App() {
     // const generalLog = log.extend('general');
     // log.enable('general');
     // generalLog.error('error');
-    getCt();
+    getContent();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onFileNamePressed = async (file) => {
+  const onFileNamePressed = async (file: any) => {
     try {
       const documentPath = Logger.getInstance().documentDirectoryPath;
       const text = await RNFS.readFile(`${documentPath}/logs/${file.name}`);
